@@ -5,7 +5,11 @@
     "types": [
       "node"
     ],
-    "paths": {}
+    "paths": {
+      "@myorg5/data": [
+        "libs/data/src/index.ts"
+      ]
+    }
   },
   "exclude": [
     "**/*.spec.ts"

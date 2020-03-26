@@ -1,11 +1,6 @@
 import { Injectable } from '@nestjs/common';
+import { Book } from '@myorg5/data';
 
-interface Book {
-  title: string,
-  author: string,
-  rating: Number,
-  desc: string
-}
 
 @Injectable()
 export class AppService {

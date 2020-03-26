@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
-
-interface Book {
-  title: string,
-  author: string,
-  rating: Number,
-  desc: string
-}
+import { HttpClient } from '@angular/common/http';
+import { Book } from '@myorg5/data';
 
 @Component({
   selector: 'myorg5-root',
@@ -14,19 +9,14 @@ interface Book {
 })
 export class AppComponent {
   title = 'bookstore';
-  
-  books: Book[] = [
-  { 
-    title: 'Title1',
-    author: 'Author1',
-    rating: 5,
-    desc: 'Lorem Ipsum'
-  }, 
-  { 
-    title: 'Title2',
-    author: 'Author2',
-    rating: 4,
-    desc: 'dolor sit amet'
+  books: Book[];
+
+  constructor(private http: HttpClient) {
+    this.fetch();
   }
-  ];
+
+  fetch() {
+    this.http.get<Books[]>('/api/books').subscribe(b => (this.books = b));
+  }
+  
 }
