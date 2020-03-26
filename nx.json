@@ -1,0 +1,22 @@
+{
+  "npmScope": "myorg5",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "bookstore": {
+      "tags": []
+    },
+    "bookstore-e2e": {
+      "tags": [],
+      "implicitDependencies": ["bookstore"]
+    }
+  }
+}
