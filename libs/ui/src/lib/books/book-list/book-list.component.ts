@@ -1,4 +1,5 @@
 import { Input, Component, OnInit } from '@angular/core';
+import { Book } from '@myorg5/data';
 
 @Component({
     selector: 'myorg5-book-list',

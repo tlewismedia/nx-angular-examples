@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '@myorg5/data';
 
+
 @Component({
   selector: 'myorg5-root',
   templateUrl: './app.component.html',
@@ -16,7 +17,7 @@ export class AppComponent {
   }
 
   fetch() {
-    this.http.get<Books[]>('/api/books').subscribe(b => (this.books = b));
+    this.http.get<Book[]>('/api/books').subscribe(b => (this.books = b));
   }
   
 }

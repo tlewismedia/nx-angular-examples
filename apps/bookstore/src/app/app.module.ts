@@ -4,13 +4,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { BookListComponent } from './book-list/book-list.component';
-import { BookFeaturedComponent } from './book-featured/book-featured.component';
-import { BookTileComponent } from './book-tile/book-tile.component';
+
+import { UiModule } from '@myorg5/ui';
+
+
+
+
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, BookListComponent, BookFeaturedComponent, BookTileComponent],
-  imports: [BrowserModule, HttpClientModule],
+  declarations: [AppComponent, HeaderComponent],
+  imports: [BrowserModule, HttpClientModule, UiModule],
   providers: [],
   bootstrap: [AppComponent]
 })
