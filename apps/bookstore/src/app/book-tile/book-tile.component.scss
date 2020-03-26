@@ -1,0 +1,24 @@
+:host{
+  border: 1px solid #ccc;
+  display: block;
+  margin: 20px;
+  padding: 20px;
+}
+
+.bt__title{
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.bt__author{
+  color: gray;
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.bt__rating{
+  color: orange;
+  font-size: 16px;
+  margin-bottom: 20px;
+}

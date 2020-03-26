@@ -1,3 +1,6 @@
-<ul>
-  <li *ngFor="let book of books" class="todo">{{ book.title }}</li>
-</ul>
+<myorg5-book-tile
+  *ngFor="let book of books"
+  [book]='book'
+  class="book-tile"
+></myorg5-book-tile>
+
