@@ -45,4 +45,8 @@ export class AppService {
   getData(): Book[] {
     return this.books;
   }
+
+  addBook(book: Book) {
+    this.books.push(book);
+  }
 }

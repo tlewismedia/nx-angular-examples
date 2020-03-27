@@ -4,12 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-
 import { UiModule } from '@myorg5/ui';
-
-
-
-
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],

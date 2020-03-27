@@ -1,0 +1,41 @@
+<form class="form" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <div class="fm__title">Add Book</div>
+
+  <label class="fm__label" for="title">
+    <div>TITLE</div>
+
+    <input id="title" formControlName="title" type="text" name="title">
+  </label> 
+
+  <label class="fm__label" for="author">
+    <div>AUTHOR</div>
+
+    <input id="author" formControlName="author" type="text" name="author">
+  </label> 
+
+  <label class="fm__label" for="rating">
+    <div>RATING</div>
+
+    <select id="rating" formControlName="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </label> 
+
+  <label class="fm__label" for="desc">
+    <div>DESCRIPTION</div>
+
+    <input id="desc" formControlName="desc" type="text" name="desc">
+  </label>
+
+  <label class="fm__label" for="price">
+    <div>Price</div>
+
+    <input id="price" formControlName="price" type="number" name="price">
+  </label>
+
+  <button class="fm__button" type="submit">Submit</button>
+</form>
