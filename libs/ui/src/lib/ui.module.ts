@@ -6,6 +6,7 @@ import { BookListComponent } from './books/book-list/book-list.component';
 import { BookFeaturedComponent } from './books/book-featured/book-featured.component';
 import { BookTileComponent } from './books/book-tile/book-tile.component';
 import { BookFormComponent } from './books/book-form/book-form.component';
+import { BestNPipe } from './filters/best-n.pipe';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { BookFormComponent } from './books/book-form/book-form.component';
     BookListComponent, 
     BookFeaturedComponent, 
     BookTileComponent, 
-    BookFormComponent
+    BookFormComponent, BestNPipe
   ],
   exports: [
     BookListComponent, 

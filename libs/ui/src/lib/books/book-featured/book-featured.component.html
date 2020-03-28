@@ -1,1 +1,14 @@
-<p>book-featured works!</p>
+<h2>Featured Best Three Books</h2>
+<div class="featured_books">
+  <div
+    *ngFor="let book of books | bestN: 3"
+    [book]='book'
+    class="fb__book"
+  >
+    <div class="fb__title">{{ book.title }}</div>
+  
+    <div class="fb__author">{{ book.author }}</div>
+    
+    <div class="fb__rating">{{ book.rating }} stars</div>
+  </div>
+</div>

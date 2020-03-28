@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
+import { Book } from '@myorg5/data';
 
 @Component({
   selector: 'myorg5-book-featured',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookFeaturedComponent implements OnInit {
 
+  @Input() books;
+  
   constructor() { }
 
   ngOnInit(): void {

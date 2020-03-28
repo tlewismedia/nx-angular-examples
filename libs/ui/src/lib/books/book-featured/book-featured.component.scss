@@ -1,0 +1,30 @@
+h2{
+  text-align: center;
+}
+
+.featured_books{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  .fb__book{
+    border: 1px solid gray;
+    padding: 20px;
+    width: 150px;
+  }
+
+  .fb__title{
+    font-weight: strong;
+    font-size: 20px;
+  }
+
+  .fb__author{
+    color: gray;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .fb__rating{
+    color: orange;
+  }
+}

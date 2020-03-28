@@ -8,7 +8,7 @@ import { Book } from '@myorg5/data';
   styleUrls: ['./book-form.component.scss']
 })
 export class BookFormComponent implements OnInit {
-  @Output() bookSubmitted = new EventEmitter<{book: Book}>();
+  @Output() bookSubmitted = new EventEmitter<Book>();
 
   bookForm: FormGroup;
   newBook: Book;
