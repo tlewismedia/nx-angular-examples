@@ -8,7 +8,7 @@ import { UiModule } from '@myorg5/ui';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
-  imports: [BrowserModule, HttpClientModule, UiModule],
+  imports: [BrowserModule, HttpClientModule, UiModule ],
   providers: [],
   bootstrap: [AppComponent]
 })

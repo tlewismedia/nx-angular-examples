@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '@myorg5/data';
+import { logFunc } from '@myorg5/util';
+
+
+
 
 @Component({
   selector: 'myorg5-root',
@@ -19,10 +23,13 @@ export class AppComponent {
     this.http.get<Book[]>('/api/books').subscribe(b => (this.books = b));
   }
 
+  @logFunc('app addBook')
   addBook(book: Book) {
     this.http.post('/api/books', book).subscribe(() => {
       this.fetch();
     });
+    
+    return true;
   }
 
   onBookSubmitted(book: Book){
