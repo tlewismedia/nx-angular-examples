@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Book } from '@myorg5/data';
-import { logFunc } from '@myorg5/util';
-
-
-
+import { Book, DataService } from '@myorg5/data';
 
 @Component({
   selector: 'myorg5-root',
@@ -13,26 +8,31 @@ import { logFunc } from '@myorg5/util';
 })
 export class AppComponent {
   title = 'bookstore';
-  books: Book[];
+  books: Book[] = [];
 
-  constructor(private http: HttpClient) {
-    this.fetch();
+  constructor(private dataService: DataService) {
+ 
   }
 
-  fetch() {
-    this.http.get<Book[]>('/api/books').subscribe(b => (this.books = b));
-  }
-
-  @logFunc('app addBook')
-  addBook(book: Book) {
-    this.http.post('/api/books', book).subscribe(() => {
-      this.fetch();
-    });
-    
-    return true;
+  ngOnInit() {
+    this.refresh();
   }
 
   onBookSubmitted(book: Book){
-    this.addBook(book);
+    this.dataService
+      .addBook(book)
+      .subscribe(() => {
+        this.refresh();
+      });
+  }
+
+  refresh() {
+    this.dataService
+      .fetchBooks()
+      .subscribe(( data ) => {
+        this.books = data
+        console.log('got data:')
+        console.log(this.books)
+      });
   }
 }

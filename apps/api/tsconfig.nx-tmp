@@ -11,6 +11,9 @@
       ],
       "@myorg5/ui": [
         "libs/ui/src/index.ts"
+      ],
+      "@myorg5/util": [
+        "libs/util/src/index.ts"
       ]
     }
   },
