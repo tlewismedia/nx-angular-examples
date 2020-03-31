@@ -3,3 +3,5 @@
 <div class="bt__rating">{{ book.rating }} stars</div>
 <div class="bt__desc">{{ book.desc }}</div>
 <div class="bt__price">{{ book.price | currency}}</div>
+
+<a class="bt__link" [routerLink]="['/books', book.id]">VIEW</a>

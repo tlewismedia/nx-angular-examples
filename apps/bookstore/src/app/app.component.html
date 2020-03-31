@@ -1,8 +1,5 @@
 <myorg5-header [title]="'BOOKSTORE'"></myorg5-header>
 
-<myorg5-book-list [books]="books"></myorg5-book-list>
+<myorg5-nav ></myorg5-nav>
 
-<myorg5-book-form (bookSubmitted)="onBookSubmitted($event)"></myorg5-book-form>
-
-<myorg5-book-featured [books]="books"></myorg5-book-featured>
-
+<router-outlet></router-outlet>

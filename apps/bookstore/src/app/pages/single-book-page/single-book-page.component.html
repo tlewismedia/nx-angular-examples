@@ -1,0 +1,11 @@
+<h2> SINGLE BOOK PAGE </h2>
+<hr>
+
+
+<div class="sb__title">{{ book.title }}</div>
+<div class="sb__author">{{ book.author }}</div>
+<div class="sb__rating">{{ book.rating }} stars</div>
+<div class="sb__desc">{{ book.desc }}</div>
+<div class="sb__price">{{ book.price | currency}}</div>
+
+<a class="sb__link" [routerLink]="['/books', book.id, 'edit']">Edit</a>

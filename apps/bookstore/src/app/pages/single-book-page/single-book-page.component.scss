@@ -1,38 +1,38 @@
 :host{
-  border: 1px solid #ccc;
+  border: 1px dotted #ccc;
   display: block;
   margin: 20px;
   padding: 20px;
 }
 
-.bt__title{
+.sb__title{
   text-transform: uppercase;
   font-size: 30px;
 }
 
-.bt__author{
+.sb__author{
   color: gray;
   font-style: italic;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-.bt__rating{
+.sb__rating{
   color: orange;
   font-size: 16px;
   margin-bottom: 20px;
 }
 
-.bt__desc{
+.sb__desc{
   margin-bottom: 20px;
 }
 
-.bt__price{
+.sb__price{
   font-size: 16px;
   font-weight: bold;
 }
 
-.bt__link{
+.sb__link{
   margin-top: 20px;
   display: block;
 }

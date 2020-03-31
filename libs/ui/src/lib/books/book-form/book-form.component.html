@@ -4,19 +4,19 @@
   <label class="fm__label" for="title">
     <div>TITLE</div>
 
-    <input id="title" formControlName="title" type="text" name="title">
+    <input [(ngModel)]="currentBook.title" id="title" formControlName="title" type="text" name="title">
   </label> 
 
   <label class="fm__label" for="author">
     <div>AUTHOR</div>
 
-    <input id="author" formControlName="author" type="text" name="author">
+    <input [(ngModel)]="currentBook.author" id="author" formControlName="author" type="text" name="author">
   </label> 
 
   <label class="fm__label" for="rating">
     <div>RATING</div>
 
-    <select id="rating" formControlName="rating">
+    <select [(ngModel)]="currentBook.rating" id="rating" formControlName="rating">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -28,13 +28,13 @@
   <label class="fm__label" for="desc">
     <div>DESCRIPTION</div>
 
-    <input id="desc" formControlName="desc" type="text" name="desc">
+    <input [(ngModel)]="currentBook.desc" id="desc" formControlName="desc" type="text" name="desc">
   </label>
 
   <label class="fm__label" for="price">
     <div>Price</div>
 
-    <input id="price" formControlName="price" type="number" name="price">
+    <input [(ngModel)]="currentBook.price" id="price" formControlName="price" type="number" name="price">
   </label>
 
   <button class="fm__button" type="submit">Submit</button>

@@ -1,20 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book, DataService } from '@myorg5/data';
 
 @Component({
-  selector: 'myorg5-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'myorg5-book-list-page',
+  templateUrl: './book-list-page.component.html',
+  styleUrls: ['./book-list-page.component.css']
 })
-export class AppComponent {
-  title = 'bookstore';
+export class BookListPageComponent implements OnInit {
   books: Book[] = [];
 
-  constructor(private dataService: DataService) {
- 
-  }
+  constructor(private dataService: DataService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.refresh();
   }
 
@@ -37,4 +34,5 @@ export class AppComponent {
 
     this.books = this.dataService.getBooks();
   }
+
 }

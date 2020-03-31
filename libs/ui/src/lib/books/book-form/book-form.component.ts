@@ -1,4 +1,4 @@
-import { Output, Component, OnInit, EventEmitter } from '@angular/core';
+import { Input, Output, Component, OnInit, EventEmitter } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Book } from '@myorg5/data';
 
@@ -8,7 +8,11 @@ import { Book } from '@myorg5/data';
   styleUrls: ['./book-form.component.scss']
 })
 export class BookFormComponent implements OnInit {
-  @Output() bookSubmitted = new EventEmitter<Book>();
+  @Output() 
+  bookSubmitted = new EventEmitter<Book>();
+
+  @Input()
+  currentBook: Book;
 
   bookForm: FormGroup;
   newBook: Book;

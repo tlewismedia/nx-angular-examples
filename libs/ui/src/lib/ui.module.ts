@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { BookListComponent } from './books/book-list/book-list.component';
 import { BookFeaturedComponent } from './books/book-featured/book-featured.component';
@@ -12,7 +13,8 @@ import { BestNPipe } from './filters/best-n.pipe';
   imports: [
     CommonModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   declarations: [
     BookListComponent, 

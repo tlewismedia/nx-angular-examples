@@ -7,10 +7,10 @@ import { Input, Component, OnInit } from '@angular/core';
 })
 export class BookTileComponent implements OnInit {
   @Input() book;
+  @Input() link;
   
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

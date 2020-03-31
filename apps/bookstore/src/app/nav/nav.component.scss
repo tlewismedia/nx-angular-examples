@@ -1,0 +1,14 @@
+nav{
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  margin: 20px;
+  color: lightblue;
+  text-decoration: none;
+}
+
+.active {
+  color: orange;
+}

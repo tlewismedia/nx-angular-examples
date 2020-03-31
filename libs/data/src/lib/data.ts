@@ -3,5 +3,6 @@ export interface Book {
   author: string,
   rating: Number,
   desc: string,
-  price: Number
+  price: Number,
+  id: Number
 }
