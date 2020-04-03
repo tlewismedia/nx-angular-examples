@@ -12,5 +12,7 @@ export class BookTileComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('book tile');
+    console.log(this.book);
   }
 }

@@ -13,6 +13,8 @@ export class BookListComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
+        console.log('books:');
+        this.books.subscribe( b => console.log(b) );
     }
 
 }
