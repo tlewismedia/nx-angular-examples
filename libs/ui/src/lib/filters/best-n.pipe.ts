@@ -7,9 +7,10 @@ import { Book } from '@myorg5/data';
 export class BestNPipe implements PipeTransform {
 
   transform(books: Book[], count: number): Book[] {
+    let newBooks = [...books];
     
-    if (books) {
-      return books.sort(compareObjectsOnKey('rating')).reverse().slice(0,count);
+    if (newBooks) {
+      return newBooks.sort(compareObjectsOnKey('rating')).reverse().slice(0,count);
     }
   }
 

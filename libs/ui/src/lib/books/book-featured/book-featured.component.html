@@ -1,9 +1,7 @@
 <h2>Featured Best Three Books</h2>
 <div class="featured_books">
-   <!-- TODO: -->
-    <!-- removed pipe | bestN: 3  -->
     <div
-      *ngFor="let book of (books | async).books"
+      *ngFor="let book of (books | async).books | bestN: 3"
       class="fb__book"
     >
       <div class="fb__title">{{ book.title }}</div>
