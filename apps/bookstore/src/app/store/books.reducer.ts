@@ -60,6 +60,16 @@ export function booksReducer(
         ...state,
         books: [...state.books, action.payload]
       };
+
+    case BooksActions.UPDATE_BOOK:
+      const editedBook = action.payload;
+      const newBooks = [...state.books, editedBook];
+      
+      return {
+        ...state,
+        books: newBooks
+      };
+
     default:
       return state;
   }

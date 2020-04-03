@@ -3,6 +3,7 @@ import { Action } from '@ngrx/store';
 import { Book } from '@myorg5/data';
 
 export const ADD_BOOK = 'ADD_BOOK';
+export const UPDATE_BOOK = 'UPDATE_BOOK';
 
 
 export class AddBook implements Action {
@@ -11,7 +12,13 @@ export class AddBook implements Action {
   constructor(public payload: Book) {}
 }
 
+export class UpdateBook implements Action {
+  readonly type = UPDATE_BOOK;
+
+  constructor(public payload: Book) {}
+}
+
 export type BooksActions =
   | AddBook
-  // | UpdateBook
+  | UpdateBook
   
