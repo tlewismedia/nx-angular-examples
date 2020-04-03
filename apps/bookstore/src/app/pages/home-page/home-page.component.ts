@@ -1,5 +1,9 @@
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
+import { Subscription, Observable } from 'rxjs';
 import { Book, DataService } from '@myorg5/data';
+// import * as BooksActions from '../store/books.actions';
+import * as fromApp from '../../store/app.reducer';
 
 @Component({
   selector: 'myorg5-home-page',
@@ -7,12 +11,16 @@ import { Book, DataService } from '@myorg5/data';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  books: Book[] = [];
+  books: Observable<{ books: Book[] }>;
 
-  constructor(private dataService: DataService) { }
+  constructor(
+    private dataService: DataService,
+    private store: Store<fromApp.AppState>
+  ) { }
 
   ngOnInit(): void {
-    this.refresh();
+    // this.refresh();
+    this.books = this.store.select('books');
   }
 
   refresh() {
@@ -23,7 +31,7 @@ export class HomePageComponent implements OnInit {
     //     console.log('got data:')
     //     console.log(this.books)
     //   });
-    this.books = this.dataService.getBooks();
+    // this.books = this.dataService.getBooks();
   }
 
 }

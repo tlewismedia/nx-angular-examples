@@ -13,6 +13,7 @@ export class BookFeaturedComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.books.subscribe( b => console.log(b) );
   }
 
 }
