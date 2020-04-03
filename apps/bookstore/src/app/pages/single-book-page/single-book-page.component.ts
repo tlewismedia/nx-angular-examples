@@ -6,6 +6,7 @@ import { Subscription, Observable } from 'rxjs';
 import { Book, DataService } from '@myorg5/data';
 import * as selectors from '../../store/books.selectors';
 import * as fromApp from '../../store/app.reducer';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'myorg5-single-book-page',
@@ -32,9 +33,18 @@ export class SingleBookPageComponent implements OnInit {
     // this.book = this.store.select(selectors.getBookById(id));
 
     this.store.select('books').subscribe( d => {
+      console.log("BOOKS UPDATED");
+
       this.book = d.books.find(item => {
         return item.id === id;
       });
+
+      // why does the state not stay fresh here? 
+      // after it's updated, d.books is still the old state
+
+      console.log('set this.book:');
+      console.log(this.book);
     });
   }
+
 }

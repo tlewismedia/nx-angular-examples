@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import * as fromApp from './store/app.reducer';
@@ -13,6 +14,7 @@ import { BookListPageComponent } from './pages/book-list-page/book-list-page.com
 import { NavComponent } from './nav/nav.component';
 import { SingleBookPageComponent } from './pages/single-book-page/single-book-page.component';
 import { EditSingleBookPageComponent } from './pages/edit-single-book-page/edit-single-book-page.component';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },  
@@ -27,6 +29,7 @@ const appRoutes: Routes = [
     BrowserModule, 
     HttpClientModule, 
     StoreModule.forRoot(fromApp.appReducer),
+    StoreDevtoolsModule.instrument({logOnly: environment.production}),
     UiModule, 
     RouterModule.forRoot(appRoutes)
   ],

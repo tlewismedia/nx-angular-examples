@@ -14,6 +14,7 @@ import * as fromApp from '../../store/app.reducer';
 })
 export class EditSingleBookPageComponent implements OnInit {
   oldBook: Book;
+  idx: number;
 
   constructor(
     private route: ActivatedRoute, 
@@ -25,26 +26,26 @@ export class EditSingleBookPageComponent implements OnInit {
   ngOnInit(){
     // tslint:disable-next-line: radix
     const id = parseInt(this.route.snapshot.params.id);
-    this.oldBook = this.dataService.getBook(id);
+    
+    this.store.select('books').subscribe( d => {
+      this.idx = d.books.findIndex(item => {
+        return item.id === id;
+      });
+      
+      this.oldBook = d.books.find(item => {
+        return item.id === id;
+      });
+    })
   }
 
   onBookSubmitted(newBook: Book){
-    // this.dataService
-    //   .addBook(book)
-    //   .subscribe(() => {
-    //     this.refresh();
-    //   });
-    
     // TODO: service should be handling this
     newBook.id = this.oldBook.id;
 
-    // this.dataService.updateBook(newBook);
-
     this.store.dispatch(
-      new BooksActions.UpdateBook(newBook)
+      new BooksActions.UpdateBook({book: newBook, idx: this.idx})
     );
 
     this.router.navigate(['/books', newBook.id])
   }
-
 }

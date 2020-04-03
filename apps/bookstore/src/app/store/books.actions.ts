@@ -15,7 +15,7 @@ export class AddBook implements Action {
 export class UpdateBook implements Action {
   readonly type = UPDATE_BOOK;
 
-  constructor(public payload: Book) {}
+  constructor(public payload: {book: Book, idx: number} ) {}
 }
 
 export type BooksActions =

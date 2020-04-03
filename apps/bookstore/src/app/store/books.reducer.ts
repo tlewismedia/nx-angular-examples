@@ -2,7 +2,8 @@ import { Book } from '@myorg5/data';
 import * as BooksActions from './books.actions';
 
 export interface State {
-  books: Book[]
+  books: Book[],
+  curBook: number
 }
 
 const initialState: State = {
@@ -47,7 +48,8 @@ const initialState: State = {
       price: 15.50,
       id: 4
     }
-  ]
+  ],
+  curBook: -1
 }
 
 export function booksReducer(
@@ -62,8 +64,9 @@ export function booksReducer(
       };
 
     case BooksActions.UPDATE_BOOK:
-      const editedBook = action.payload;
-      const newBooks = [...state.books, editedBook];
+      const editedBook = {...action.payload.book};
+      const newBooks = [...state.books];
+      newBooks[action.payload.idx] = editedBook;
       
       return {
         ...state,
