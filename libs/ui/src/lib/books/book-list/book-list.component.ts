@@ -1,5 +1,7 @@
 import { Input, Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Book } from '@myorg5/data';
+
 
 @Component({
     selector: 'myorg5-book-list',
@@ -7,14 +9,9 @@ import { Book } from '@myorg5/data';
     styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
-
-    @Input() books;
-
-    constructor() { }
+    @Input() books$: Observable<{ books: Book[] }>;
 
     ngOnInit(): void {
-        console.log('books:');
-        this.books.subscribe( b => console.log(b) );
-    }
 
+    }
 }

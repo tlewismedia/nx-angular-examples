@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Book, DataService } from '@myorg5/data';
+import { Book } from '@myorg5/data';
+import { Store } from '@ngrx/store';
+import * as BooksActions from './store/books.actions';
 
 @Component({
   selector: 'myorg5-root',
@@ -8,33 +10,10 @@ import { Book, DataService } from '@myorg5/data';
 })
 export class AppComponent {
   title = 'bookstore';
-  books: Book[] = [];
 
-  constructor(private dataService: DataService) {
- 
-  }
+  constructor(private store: Store) {}
 
-  ngOnInit() {
-    this.refresh();
-  }
-
-  onBookSubmitted(book: Book){
-    // this.dataService
-    //   .addBook(book)
-    //   .subscribe(() => {
-    //     this.refresh();
-    //   });
-  }
-
-  refresh() {
-    // this.dataService
-    //   .fetchBooks()
-    //   .subscribe(( data ) => {
-    //     this.books = data
-    //     console.log('got data:')
-    //     console.log(this.books)
-    //   });
-
-    this.books = this.dataService.getBooks();
+  onInit() {
+    this.store.dispatch(new BooksActions.FetchBooks());
   }
 }

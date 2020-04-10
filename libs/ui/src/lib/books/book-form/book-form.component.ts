@@ -9,11 +9,12 @@ import { Book } from '@myorg5/data';
   styleUrls: ['./book-form.component.scss']
 })
 export class BookFormComponent implements OnInit {
-  @Output() 
+  @Output()
   bookSubmitted = new EventEmitter<Book>();
 
   @Input()
   currentBook: Book;
+  currentBookCopy: Book;
 
   bookForm: FormGroup;
   newBook: Book;
@@ -28,6 +29,8 @@ export class BookFormComponent implements OnInit {
       'desc': new FormControl(),
       'price': new FormControl(),
     });
+
+    this.currentBookCopy = {...this.currentBook};
   }
 
   onSubmit() {

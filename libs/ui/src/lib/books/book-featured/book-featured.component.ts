@@ -1,4 +1,5 @@
 import { Input, Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Book } from '@myorg5/data';
 
 @Component({
@@ -6,14 +7,6 @@ import { Book } from '@myorg5/data';
   templateUrl: './book-featured.component.html',
   styleUrls: ['./book-featured.component.scss']
 })
-export class BookFeaturedComponent implements OnInit {
-
-  @Input() books;
-  
-  constructor() { }
-
-  ngOnInit(): void {
-    this.books.subscribe( b => console.log(b) );
-  }
-
+export class BookFeaturedComponent{
+  @Input() books: Book[];
 }

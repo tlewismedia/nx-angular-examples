@@ -42,6 +42,7 @@
     "@nestjs/common": "^6.8.3",
     "@nestjs/core": "^6.8.3",
     "@nestjs/platform-express": "^6.8.3",
+    "@ngrx/effects": "^9.1.0",
     "@ngrx/store": "^9.0.0",
     "@nrwl/angular": "9.1.4",
     "core-js": "^2.5.4",

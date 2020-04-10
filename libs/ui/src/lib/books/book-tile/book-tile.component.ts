@@ -1,4 +1,5 @@
 import { Input, Component, OnInit } from '@angular/core';
+import { Book } from '@myorg5/data';
 
 @Component({
   selector: 'myorg5-book-tile',
@@ -6,9 +7,9 @@ import { Input, Component, OnInit } from '@angular/core';
   styleUrls: ['./book-tile.component.scss']
 })
 export class BookTileComponent implements OnInit {
-  @Input() book;
+  @Input() book: Book;
   @Input() link;
-  
+
   constructor() { }
 
   ngOnInit(): void {

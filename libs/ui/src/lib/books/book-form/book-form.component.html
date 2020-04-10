@@ -4,37 +4,37 @@
   <label class="fm__label" for="title">
     <div>TITLE</div>
 
-    <input [(ngModel)]="currentBook.title" id="title" formControlName="title" type="text" name="title">
-  </label> 
+    <input [(ngModel)]="currentBookCopy.title" id="title" formControlName="title" type="text" name="title">
+  </label>
 
   <label class="fm__label" for="author">
     <div>AUTHOR</div>
 
-    <input [(ngModel)]="currentBook.author" id="author" formControlName="author" type="text" name="author">
-  </label> 
+    <input [(ngModel)]="currentBookCopy.author" id="author" formControlName="author" type="text" name="author">
+  </label>
 
   <label class="fm__label" for="rating">
     <div>RATING</div>
 
-    <select [(ngModel)]="currentBook.rating" id="rating" formControlName="rating">
+    <select [(ngModel)]="currentBookCopy.rating" id="rating" formControlName="rating">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
-  </label> 
+  </label>
 
   <label class="fm__label" for="desc">
     <div>DESCRIPTION</div>
 
-    <input [(ngModel)]="currentBook.desc" id="desc" formControlName="desc" type="text" name="desc">
+    <input [(ngModel)]="currentBookCopy.desc" id="desc" formControlName="desc" type="text" name="desc">
   </label>
 
   <label class="fm__label" for="price">
     <div>Price</div>
 
-    <input [(ngModel)]="currentBook.price" id="price" formControlName="price" type="number" name="price">
+    <input [(ngModel)]="currentBookCopy.price" id="price" formControlName="price" type="number" name="price">
   </label>
 
   <!-- <button class="fm__button" type="submit">Submit</button> -->

@@ -73,6 +73,12 @@ export function booksReducer(
         books: newBooks
       };
 
+    case BooksActions.SET_BOOKS:
+      return {
+        ...state,
+        books: [...action.payload]
+      };
+
     default:
       return state;
   }

@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '@myorg5/data';
 import { logFunc } from '@myorg5/util';
-import {Observable} from 'rxjs';
+import {of, from, Observable} from 'rxjs';
+import { map, tap, take, exhaustMap } from 'rxjs/operators';
 
 // temporarily switch to a mock local api
 // will later resume http requests to external Nest api
@@ -16,15 +17,15 @@ import {Observable} from 'rxjs';
 export class DataService {
 
   books: Book[] = [
-    { 
+    {
       title: 'Title1',
       author: 'Author1',
       rating: 5,
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis massa tincidunt dui ut ornare lectus sit amet est. Sit amet tellus cras adipiscing enim eu. Cras tincidunt lobortis feugiat vivamus. ',
       price: 10.50,
       id: 0
-    }, 
-    { 
+    },
+    {
       title: 'Title2',
       author: 'Author2',
       rating: 4,
@@ -32,7 +33,7 @@ export class DataService {
       price: 12.50,
       id: 1
     },
-    { 
+    {
       title: 'Title3',
       author: 'Author3',
       rating: 2,
@@ -40,7 +41,7 @@ export class DataService {
       price: 13.50,
       id: 2
     },
-    { 
+    {
       title: 'Title4',
       author: 'Author4',
       rating: 1,
@@ -48,7 +49,7 @@ export class DataService {
       price: 14.50,
       id: 3
     },
-    { 
+    {
       title: 'Title5',
       author: 'Author5',
       rating: 4,
@@ -59,7 +60,7 @@ export class DataService {
   ];
 
   // temp disable http requests
-  // constructor(private http: HttpClient) { 
+  // constructor(private http: HttpClient) {
   //   this.fetchBooks();
   // }
 
@@ -72,7 +73,17 @@ export class DataService {
   //   return this.http.get<Book[]>('/api/books')
   // }
 
-  getBooks() {
+
+  fetchBooks(): Observable<Book[]> {
+
+    return of(this.books)
+
+  }
+
+
+
+  getBooks(): Book[] {
+    console.log("in data service, getbooks");
     return this.books;
   }
 
@@ -96,5 +107,5 @@ export class DataService {
     }
   }
 
-  
+
 }

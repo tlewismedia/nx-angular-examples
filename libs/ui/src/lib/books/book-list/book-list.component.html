@@ -1,5 +1,5 @@
 <myorg5-book-tile
-  *ngFor="let book of (books | async).books"
+  *ngFor="let book of (books$ | async).books"
   [book]='book'
   class="book-tile"
 ></myorg5-book-tile>

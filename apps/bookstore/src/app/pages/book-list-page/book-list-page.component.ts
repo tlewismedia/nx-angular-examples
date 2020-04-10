@@ -2,7 +2,7 @@ import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 
-import { Book, DataService } from '@myorg5/data';
+import { Book } from '@myorg5/data';
 import * as BooksActions from '../../store/books.actions';
 import * as fromApp from '../../store/app.reducer';
 
@@ -12,7 +12,9 @@ import * as fromApp from '../../store/app.reducer';
   styleUrls: ['./book-list-page.component.css']
 })
 export class BookListPageComponent implements OnInit {
-  books: Observable<{ books: Book[] }>;
+  books$: Observable<{ books: Book[] }>;
+
+  // TODO: temp, id will be generated in service
   genId: number;
 
   newBook: Book = {
@@ -25,43 +27,18 @@ export class BookListPageComponent implements OnInit {
   }
 
   constructor(
-    private dataService: DataService,
     private store: Store<fromApp.AppState>
   ) { }
 
   ngOnInit(): void {
-    this.refresh();
-    this.books = this.store.select('books');
-    console.log('this.books');
-    console.log(this.books);
+    this.books$ = this.store.select('books');
   }
 
   onBookSubmitted(book: Book){
-    // this.dataService
-    //   .addBook(book)
-    //   .subscribe(() => {
-    //     this.refresh();
-    //   });
-
-    this.books.subscribe( d => { this.genId = d.books.length } )
+    this.books$.subscribe( d => { this.genId = d.books.length } )
 
     book.id = this.genId;
 
-    this.store.dispatch(
-      new BooksActions.AddBook(book)
-    );
+    this.store.dispatch(new BooksActions.AddBook(book));
   }
-
-  refresh() {
-    // this.dataService
-    //   .fetchBooks()
-    //   .subscribe(( data ) => {
-    //     this.books = data
-    //     console.log('got data:')
-    //     console.log(this.books)
-    //   });
-
-    // this.books = this.dataService.getBooks();
-  }
-
 }

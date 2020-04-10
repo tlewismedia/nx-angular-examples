@@ -3,10 +3,15 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import * as fromApp from './store/app.reducer';
+import { BooksEffects } from './store/books.effects';
+
+
+
 import { HeaderComponent } from './header/header.component';
 import { UiModule } from '@myorg5/ui';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -57,6 +62,7 @@ const appRoutes: Routes = [
     BrowserModule, 
     HttpClientModule, 
     StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([BooksEffects]),
     StoreDevtoolsModule.instrument({logOnly: environment.production}),
     UiModule, 
     RouterModule.forRoot(appRoutes), 
